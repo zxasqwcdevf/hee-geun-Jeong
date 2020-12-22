@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>08_focus_blur.html</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+	$(function(){
+		
+		/*
+		$("input").focus(function(){
+			$(this).css("background-color","lightgreen");
+		});
+		
+		$("#upw").focus();
+		
+		$("input").blur(function(){
+			$(this).css("background-color","white");
+		});
+		*/
+		
+		$("input").on("focus",function(){
+			$(this).css("background-color","lightgreen");
+		}).on("blur",function(){
+			$(this).css("background-color","white");
+		});
+		
+		$("#uid").keydown(function(event){
+			if(event.keyCode == 13){
+				if($(this).val() == ""){
+					alert('아이디 써 임마');
+				}else{
+					$("#upw").focus();	
+				}
+				
+			}
+		});
+		
+		$("#upw").keydown(function(e){
+			if(e.keyCode == 13){
+				$("form").submit();
+			}
+		});
+	});
+</script>
+</head>
+<body>
+<form>
+	ID : <input type="text" name="uid" id="uid"/> <br/>
+	PW : <input type="password" name="upw" id="upw"/> <br/>
+	<input type="button" value="전송"/>
+</form>
+</body>
+</html>

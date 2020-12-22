@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>03_jq_attr.html</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+<img id="img" src="../img/bonobono.jpg" alt="보노보노" width="120"/>
+<button>출력</button>
+
+<script>
+	$("#img").click(function(){
+		alert($(this).attr("src"));	
+		alert($(this).prop("src"));
+	});
+	
+	$("button").click(function(){
+		$("#img").attr("width",200);		
+	});
+</script>
+</body>
+</html>

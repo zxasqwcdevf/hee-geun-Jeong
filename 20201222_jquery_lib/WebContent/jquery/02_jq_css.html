@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>02_jq_css.html</title>
+<!-- <script src="../js/jquery-3.5.1.min.js"></script> -->
+<!-- <script src="http://code.jquery.com/jquery-3.5.1.js"></script> -->
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+	$(function(){
+		var h1 = document.getElementsByTagName("h1");
+		console.log(h1);
+		
+		h1 = $("h1");
+		console.log(h1);
+		
+		h1 = document.getElementsByClassName("h1");
+		console.log("class : "+h1);
+		
+		h1 = $(".h1");
+		console.log("jquery class : " + h1);
+		
+		h1 = document.getElementById("h1");
+		console.log(h1);
+		
+		h1 = $("#h1");
+		console.log(h1);
+		
+		$(".h1").css("background","red");
+		$(".h1").css("color","white");
+		
+		$("#h1").css("background","lightgreen");
+		$("#h1").css("color","yellow");
+		
+		$("h1").css("background","yellow");
+		$("h1").css("color","skyblue");
+		
+		document.getElementById("h1").style.color = "black";
+	});
+</script>
+</head>
+<body>
+	<h1 class="h1">Header1</h1>
+	<h1 class="h1">Header2</h1>
+	<h1 class="h1" id="h1">Header3</h1>
+	<h1 id="h1">Header4</h1>
+	<h1 id="h1">Header5</h1>
+</body>
+</html>

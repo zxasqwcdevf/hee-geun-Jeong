@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>05_jq_text_html.html</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+	$(function(){
+		/*
+			innerHTML = 특정 태그 요소의 바디에 html 태그 요소를 삽입 html()
+			innerText = 특정 태그 요소의 바디에 text 문자열을 삽입 text()
+		*/
+		
+		$("h1:nth-child(1)").text("<a href='#'>text()</a>");
+		$("h1:nth-child(2)").html("<a href='#'>html()</a>");
+		
+		$("#text").click(function(){
+			var val = $("#target").text();
+			alert(val);
+		});
+		
+		$("#html").click(function(){
+			var val = $("#target").html();
+			alert(val);
+		});
+		
+	});
+</script>
+</head>
+<body>
+<h1>h1 -1</h1>
+<h1>h1 -2</h1>
+<p id="target">이것은 <b>하나의 단락</b> 입니다.</p>
+<button id="text">text</button>
+<button id="html">html</button>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>07_hover.html</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<style>
+	#box{
+		width:100px;
+		height:100px;
+		background-color:lightblue;
+	}
+	.hover{
+		background-color:lightgreen;
+		border-radius : 50px;
+	}
+</style>
+<script>
+	$(function(){
+		$("h1").hover(function(){
+			$(this).css({
+				backgroundColor : "gray",
+				color : "white",
+				cursor : "pointer"
+			});
+		},function(){
+			$(this).css({
+				backgroundColor : "",
+				color : ""
+			});
+		});	
+		
+		$("#box").hover(function(){
+			$(this).addClass("hover");
+		},function(){
+			$(this).removeClass("hover");
+		});
+		
+		
+		
+	});
+</script>
+</head>
+<body>
+	<h1>hover 1</h1>
+	<h1>hover 2</h1>
+	<h1>hover 3</h1>
+	<div id="box"></div>
+</body>
+</html>

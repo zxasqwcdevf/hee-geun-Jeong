@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>01_hello.html</title>
+<script src="../js/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+	
+	
+<script>
+	// 문서가 모두 준비 되었을때 실행할 함수 지정
+	window.onload = function(){}
+	
+	jQuery(document).ready(function(){
+		alert('HELLO jQuery!!!!');
+	});
+	
+	$(document).ready(function(){
+		console.log('$ == jQuery');
+	});
+	
+	$(function(){
+		console.log('문서가 준비됨');
+	});
+	
+</script>
+</body>
+</html>
