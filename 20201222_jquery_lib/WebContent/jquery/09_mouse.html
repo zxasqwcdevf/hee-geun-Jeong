@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>09_mouse.html</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+$(function(){
+	/*
+$(".out").css({
+	width:100,
+	height :100,
+	background : "yellow"
+}).on("click",function(){
+	$(this).css("background-color","red");
+}).on("mouseover",function(){
+	$(this).css("background-color","blue");
+}).on("mouseout",function(){
+	$(this).css("background-color","yellow");
+});
+*/
+
+	$(".out").css({
+		width : 100,
+		height : 100,
+		background : "yellow"
+	}).on({
+		click : function(){
+			$(this).css("background-color","red");
+		},
+		mouseenter : function(){
+			$(this).css("background-color","blue");
+		},
+		mouseleave : function(){
+			$(this).css("background-color","yellow");
+		}
+	});
+	
+	
+	$(document).mousemove(function(event){
+		console.log("move move");
+		$("#log").text("x : "+event.pageX+", y : "+event.pageY);
+	});
+});
+</script>
+</head>
+<body>
+	<div class="out">
+	<p>mouse</p>
+	</div>
+	<div id="log"></div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>14_toggle_event.html</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<style>
+.page {
+	border: 1px solid black;
+}
+</style>
+
+
+</head>
+<body>
+	<button>toggle</button>
+	<div class="page">
+		<h1>애국가</h1>
+		<p>
+			동해물과 백두산이 마르고 닳도록<br /> 
+			하느님이 보우하사 우리 나라만세 <br /> 
+			무궁화 삼천리 화려강산<br />
+			대한사람 대한으로 길이 보전하세.
+		</p>
+	</div>
+	
+	
+	<script>
+	$(".page").hover(function(){
+		//$(this).hide(1000); //slow normal fast
+		//$(this).fadeOut("slow");
+		$(this).stop().slideUp("slow");
+	}, function(){
+		//$(this).show(2000);
+		//$(this).fadeIn("slow");
+		$(this).stop().slideDown("slow");
+	});
+	
+	$("button").click(function(){
+		$(".page").toggle(500);
+	});
+	
+	
+	
+	</script>
+</body>
+</html>

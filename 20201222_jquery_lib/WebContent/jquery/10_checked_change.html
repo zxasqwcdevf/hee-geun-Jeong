@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>10_checked_change.html</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+	<input type="password" id="pass">
+	<label><input type="checkbox" id="ch">비밀번호 보기</label>
+
+	<script>
+		/*$("#ch").click(function() {
+			if($(this).is(":checked")){
+				$("#pass").attr("type","text");
+			}else{
+				$("#pass").attr("type","password");
+			}		
+		}); 
+		*/
+		$("#ch").on("change",function(){
+			if($(this).is(":checked")){
+				$("#pass").attr("type","text");
+			}else{
+				$("#pass").attr("type","password");
+			}
+		});
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>13_animate_toggle.html</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+	<label>ID</label>
+	<input type="text" name="id" id="id" />
+	<button>button</button>
+	<script>
+		var bool = true;
+		var w = $("#id").width();
+		var h = $("#id").height();
+
+		$("button").click(function() {
+			/*if(bool){
+			
+			 $("#id").animate({
+			 width : 0,
+			 height :0
+			 },1000,function(){
+			 $(this).css("display","none");
+			
+			 });
+			 bool = false;
+			 }else{
+			 $("#id").css("display", "inline-block").animate({
+			 width : w,
+			 height : h
+			 },1000);
+			 bool= true;
+			 }*/
+			$("#id").toggle(1000);
+
+		});
+	</script>
+</body>
+</html>
