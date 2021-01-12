@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.koreate.mappers.MemberMapper">
+
+	<insert id="insertMember" parameterType="net.koreate.test_java.vo.MemberVO">
+		INSERT INTO tbl_member 
+		VALUES(#{userid},#{userpw},#{username},now(),now())
+	</insert>
+	
+	<select id="readMember" parameterType="String" 
+			resultType="net.koreate.test_java.vo.MemberVO">
+		SELECT * FROM tbl_member WHERE userid = #{id}
+	</select>
+
+	<select id="readWithPass" parameterType="java.util.Map"
+			resultType="net.koreate.test_java.vo.MemberVO">
+		SELECT * FROM tbl_member WHERE userid = #{userid} AND userpw = #{userpw}
+	</select>
+
+	<select id="memberList" 
+			resultType="net.koreate.test_java.vo.MemberVO">
+		SELECT * FROM tbl_member;
+	</select>
+
+</mapper>

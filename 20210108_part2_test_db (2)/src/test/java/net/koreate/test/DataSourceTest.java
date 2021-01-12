@@ -8,6 +8,7 @@ import javax.sql.DataSource;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -19,6 +20,9 @@ public class DataSourceTest {
 	
 	@Inject
 	DataSource ds;
+	
+	//@Inject
+	//DriverManagerDataSource dds;
 	
 	@Test
 	public void dataSourceTest() {

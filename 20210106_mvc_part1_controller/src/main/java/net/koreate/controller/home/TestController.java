@@ -37,11 +37,14 @@ public class TestController {
 	@RequestMapping(value="testD",method= RequestMethod.GET)
 	//String msg = request.getParameter("msg");
 	//String view = testD(msg);
-	public String testD(String msg,@RequestParam(name ="msg" , required=false, defaultValue="default")String message,
+	public String testD(
+			String msg,
+			@RequestParam(name ="msg" , required=false, defaultValue="default")String message,
+			String message1,
 			@RequestParam(name ="msg" , required = true)String mess
 			) { 
 		System.out.println("msg : " + msg);
-		System.out.println("message : " + message);
+		System.out.println("message : " + message1);
 		System.out.println("mess : "+ mess);
 		return "result";
 		
@@ -89,7 +92,7 @@ public class TestController {
 	@RequestMapping("productSubmit")
 	public ModelAndView prductSubmit(
 			//String name , int price 
-			ProductVO vo) {
+			@ModelAttribute ProductVO vo) {
 		ModelAndView mav = new ModelAndView();
 		//ProductVO vo = new ProductVO(name,price);
 		System.out.println(vo);

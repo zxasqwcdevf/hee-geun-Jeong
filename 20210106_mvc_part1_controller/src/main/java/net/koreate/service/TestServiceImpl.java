@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import net.koreate.dao.TestDAO;
 
-@Service
+@Service("ts")
 public class TestServiceImpl implements TestService {
 	
 	@Autowired

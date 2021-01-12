@@ -4,9 +4,12 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.inject.Inject;
+import javax.inject.Named;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,10 +33,14 @@ public class HomeController {
 	
 	//@Inject
 	@Autowired
+	@Qualifier("ts")
 	TestService testService;
 	/**
 	 * 해당되는 타입의 빈이 존재 하는지 찾습니다.
 	 */
+	@Inject
+	@Named("ts")
+	TestService ts;
 	
 	//TestService ts = new TestServiceImpl();
 	
